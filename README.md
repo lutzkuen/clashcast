@@ -42,4 +42,5 @@ Run the app
     cd app && python main.py
 
 This will run a flask app which you can access at localhost:8080. When you enter your player Tag and manage to find your opponent with the clan name / player name / player rank combination the app will create a little image depicting your probability receiving a given amount of stars.
+
 ![](demo.png)
