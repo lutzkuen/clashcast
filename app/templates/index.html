@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Clashcast</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='assets/coc-icon-45727.png') }}" />
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+    <div class="justify-content-center align-items-center">
+        <div class="row display-4 mt-5 mb-5">
+            Clashcast
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                <form action="/" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" id="attacker" name="attacker" placeholder="Attacker Tag" class="form-control">
+                        <label for="attacker">{{ attacker_name }}</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" id="defender_clan" name="defender_clan" placeholder="Defender Clan / Defender Name / Defender Clan Position" class="form-control clanAutoComplete" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="submit" />
+                </form>
+            </div>
+        </div>
+        {% if image_url %}
+        <img src="{{ url_for('static', filename='assets/' + image_url) }}" class="img-fluid" />
+        {% endif %}
+        {% if not_found %}
+        <div class="row">
+            Player not found
+        </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    $('.clanAutoComplete').autoComplete({
+    resolverSettings: {
+        url: 'clan/search'
+    }
+    });
+    $('.userAutoComplete').autoComplete({
+    resolverSettings: {
+        url: 'user/search'
+    }
+    });
+</script>
+</body>
+</html>
+

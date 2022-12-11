@@ -1,0 +1,9 @@
+*.tar.gz
+venv
+.ipynb_checkpoints
+clanwars/*.json
+catboost_info
+bak
+app/app.yaml
+google-cloud-sdk
+*.env
