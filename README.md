@@ -21,7 +21,7 @@ To gather data run
 
     python get_data.py
 
-this will slowly populate the clanwars folder with json files describing the outcome of some wars.
+this will slowly populate the clanwars folder with json files describing the outcome of some wars. There is some ata available on kaggle https://www.kaggle.com/datasets/lkuen89/clash-of-clans-clan-war-results.
 
 ## Training the models
 
